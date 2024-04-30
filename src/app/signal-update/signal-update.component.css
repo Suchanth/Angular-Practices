@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: black;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.counter-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color:black;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.counter-container button:hover {
+    background-color: #0056b3;
+}
+
+.counter-container span {
+    margin: 0 20px;
+    font-size: 24px;
+    align-items: center;
+}
+
+.task-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-item p {
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item p:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .counter-container button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .counter-container span {
+        font-size: 20px;
+    }
+
+    .task-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+
+    .counter-container {
+        flex-direction: column;
+    }
+
+    .counter-container button {
+        width: 100%;  
+        margin: 5px 0;
+    }
+
+    .counter-container span {
+        margin: 10px 0;
+        
+    }
+}

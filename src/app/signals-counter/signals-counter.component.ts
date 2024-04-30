@@ -1,5 +1,5 @@
 import { Component, computed, effect, signal } from '@angular/core';
-import { urlToHttpOptions } from 'url';
+
 
 @Component({
   selector: 'app-signals-counter',

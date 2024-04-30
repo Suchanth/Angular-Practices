@@ -3,6 +3,12 @@ import { NgFor } from '@angular/common';
 import { Observable } from 'rxjs';
 import { SignalsComponent } from './signals/signals.component';
 import { SignalsCounterComponent } from './signals-counter/signals-counter.component';
+import { SignalUpdateComponent } from './signal-update/signal-update.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { NgModel } from '@angular/forms';
+import { HookChildComponent } from './hook-child/hook-child.component';
+import { CustomDirectiveDirective } from './custom-directive.directive';
+
 
 
 @Component({
@@ -11,7 +17,10 @@ import { SignalsCounterComponent } from './signals-counter/signals-counter.compo
   imports: [
     NgFor,
     SignalsComponent,
-    SignalsCounterComponent
+    SignalsCounterComponent,
+    SignalUpdateComponent,
+    HooksComponent,
+    CustomDirectiveDirective,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

@@ -1,23 +1,26 @@
-import { Component } from '@angular/core';
+import { Component,signal,DoCheck } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { NgFor } from '@angular/common';
+
 
 @Component({
   selector: 'app-signals',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './signals.component.html',
   styleUrl: './signals.component.css',
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class SignalsComponent {
-  count = 0;
-  get calculated(){
-    return this.count *2;
-  }
+export class SignalsComponent implements DoCheck{
+  counter=signal(0);
+  message:string[]=[];
   increment(){
-    this.count++;
+    this.counter;
   }
   decrement(){
-    this.count--;
+    this.counter;
+  }
+  ngDoCheck(): void {
+    console.log("Angular Change Detection Called!")
   }
 }
