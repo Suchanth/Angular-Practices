@@ -1,0 +1,17 @@
+.task-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-item p {
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item p:last-child {
+    border-bottom: none;
+}
