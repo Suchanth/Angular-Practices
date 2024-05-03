@@ -20,5 +20,8 @@
 <!-- <p appCustomDirective>Apply custom directive</p> -->
 <!-- <app-new-task></app-new-task>
 <app-show-task></app-show-task> -->
-<app-subject></app-subject>
+<!-- <app-subject></app-subject> -->
+<!-- <app-unsubscribe></app-unsubscribe> -->
+<router-outlet></router-outlet>
+<app-child inputData="inputData-testing" (outputEvent)="onEventEmit($event)"></app-child>
 

@@ -12,7 +12,10 @@ import { CustomDirectiveDirective } from './custom-directive.directive';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { SubjectComponent } from './subject/subject.component';
-
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { StandaloneComponent } from './standalone/standalone.component';
+import { RouterOutlet } from '@angular/router';
+import { ChildComponent } from './child/child.component';
 
 
 @Component({
@@ -27,22 +30,29 @@ import { SubjectComponent } from './subject/subject.component';
     CustomDirectiveDirective,
     NewTaskComponent,
     ShowTaskComponent,
-    SubjectComponent
+    SubjectComponent,
+    UnsubscribeComponent,
+    StandaloneComponent,
+    RouterOutlet,
+    ChildComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent  {
   title = 'angular';
-  data:any[]=[];
+  onEventEmit(e:any){
+    alert(e)
+  }
+  // data:any[]=[];
 
-  @ViewChild('createBtn')
-  createBtn:ElementRef;
-  createBtnObservable;
+  // @ViewChild('createBtn')
+  // createBtn:ElementRef;
+  // createBtnObservable;
 
 
-  array1=[1,2,3,4,5];
-  array2=['A','B','C','D']
+  // array1=[1,2,3,4,5];
+  // array2=['A','B','C','D']
 
   // //Create an Observables
   // myObservables=new Observable((observer)=>{
@@ -57,17 +67,17 @@ export class AppComponent implements AfterViewInit {
 
 
   //myObservables=of(this.array1,this.array2,20,30,'Hello',true);
-  promiseData=new Promise((resolve,reject)=>{
-    resolve([10,20,30,40,50])
-  })
+  // promiseData=new Promise((resolve,reject)=>{
+  //   resolve([10,20,30,40,50])
+  // })
 
   //myObservables:2,4,6,8,10
   //Result:10,20,30,40,50
-  myObservables=from([2,4,6,8,10,12]).pipe(map((value)=>{
-    return value * 5;
-  }),filter((value,i)=>{
-    return value % 4 == 0;
-  }));
+  // myObservables=from([2,4,6,8,10,12]).pipe(map((value)=>{
+  //   return value * 5;
+  // }),filter((value,i)=>{
+  //   return value % 4 == 0;
+  // }));
 
   // filteredObser=this.myObservables.pipe(map((value)=>{
   //   return value * 5;
@@ -79,7 +89,7 @@ export class AppComponent implements AfterViewInit {
   //   return value % 4 == 0;
   // }))
 
-  GetAsyncData(){
+  // GetAsyncData(){
 
     //Observables:
     //next(),error(),complete()
@@ -94,19 +104,19 @@ export class AppComponent implements AfterViewInit {
   //        alert("All Data are streamed")
   // })
 
-  this.myObservables.subscribe({
-    next:(value:any)=>{
-      this.data.push(value);
-      console.log(value);
-    },
-    error(err){
-      alert(err.message)
-    },
-    complete(){
-      alert('All Data are Streamed')
-    }
-  })
-  }
+  // this.myObservables.subscribe({
+  //   next:(value:any)=>{
+  //     this.data.push(value);
+  //     console.log(value);
+  //   },
+  //   error(err){
+  //     alert(err.message)
+  //   },
+  //   complete(){
+  //     alert('All Data are Streamed')
+  //   }
+  // })
+  // }
   // buttonClicked(){
   //   let count=0;
   //   this.createBtnObservable=fromEvent(this.createBtn.nativeElement,'click')
@@ -115,9 +125,9 @@ export class AppComponent implements AfterViewInit {
   //     this.showItem(++count);
   //   })
   // }
-  ngAfterViewInit(): void {
+  // ngAfterViewInit(): void {
     //this.buttonClicked();
-  }
+  //}
 
   // showItem(val){
   //   let div=document.createElement('div')
@@ -125,4 +135,6 @@ export class AppComponent implements AfterViewInit {
   //   div.className='data-list'
   //   document.getElementById('container').appendChild(div)
   // }
+
+
 }
